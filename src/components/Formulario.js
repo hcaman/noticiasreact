@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
 
 class Formulario extends Component {
     state = { categoria: '' }
@@ -12,8 +13,6 @@ class Formulario extends Component {
             {categoria: e.target.value}, 
             () => { this.props.consultarNoticias(this.state.categoria) } 
         );
-        
-        
     }
 
 
@@ -41,6 +40,10 @@ class Formulario extends Component {
             </div>
         );
     }
+}
+
+Formulario.protoTypes = {
+    consultarNoticias: PropTypes.func.isRequired
 }
 
 export default Formulario;
